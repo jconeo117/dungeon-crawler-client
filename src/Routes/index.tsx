@@ -4,6 +4,8 @@ import LoginPage from '../Pages/LoginPage';
 import RegisterPage from '../Pages/RegisterPage';
 import Dashboard from '../Pages/Dashboard';
 import CharacterPage from '../Pages/CharacterPage';
+import InventoryPage from '../Pages/InventoryPage';
+import ShopPage from '../Pages/ShopPage';
 
 const router = createBrowserRouter([
   {
@@ -32,11 +34,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'inventory',
-        element: <div>Inventory Page</div>,
+        element: <InventoryPage/>,
       },
       {
         path: 'shop',
-        element: <div>Shop Page</div>,
+        element: <ShopPage/>,
       },
       {
         path: 'auctions',

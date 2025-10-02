@@ -74,8 +74,10 @@ export default {
         }
       },
       fontFamily: {
-        'gaming': ['Orbitron', 'monospace'],
-        'fantasy': ['Cinzel', 'serif'],
+        // 'gaming': ['Orbitron', 'monospace'],
+        // 'fantasy': ['Cinzel', 'serif'],
+        sans: ['Poppins', 'sans-serif'],
+        cinzel: ['"Cinzel Decorative"', 'serif'],
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',

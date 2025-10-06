@@ -1,6 +1,126 @@
+/* Importar fuentes de Google */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
 @import 'tailwindcss';
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700;900&display=swap');
-/* Base styles for the dark theme */
+
+/* Configuración de tema personalizado */
+@theme {
+  /* ========== COLORES PERSONALIZADOS ========== */
+  
+  /* Primary Colors (Blue) */
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-200: #bae6fd;
+  --color-primary-300: #7dd3fc;
+  --color-primary-400: #38bdf8;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+  --color-primary-800: #075985;
+  --color-primary-900: #0c4a6e;
+  --color-primary-950: #082f49;
+
+  /* Gold Colors */
+  --color-gold-50: #fffbeb;
+  --color-gold-100: #fef3c7;
+  --color-gold-200: #fde68a;
+  --color-gold-300: #fcd34d;
+  --color-gold-400: #fbbf24;
+  --color-gold-500: #f59e0b;
+  --color-gold-600: #d97706;
+  --color-gold-700: #b45309;
+  --color-gold-800: #92400e;
+  --color-gold-900: #78350f;
+  --color-gold-950: #451a03;
+
+  /* Dark Colors */
+  --color-dark-50: #f8fafc;
+  --color-dark-100: #f1f5f9;
+  --color-dark-200: #e2e8f0;
+  --color-dark-300: #cbd5e1;
+  --color-dark-400: #94a3b8;
+  --color-dark-500: #64748b;
+  --color-dark-600: #475569;
+  --color-dark-700: #334155;
+  --color-dark-800: #1e293b;
+  --color-dark-900: #0f172a;
+  --color-dark-950: #020617;
+
+  /* Danger Colors (Red) */
+  --color-danger-50: #fef2f2;
+  --color-danger-100: #fee2e2;
+  --color-danger-200: #fecaca;
+  --color-danger-300: #fca5a5;
+  --color-danger-400: #f87171;
+  --color-danger-500: #ef4444;
+  --color-danger-600: #dc2626;
+  --color-danger-700: #b91c1c;
+  --color-danger-800: #991b1b;
+  --color-danger-900: #7f1d1d;
+
+  /* Success Colors (Green) */
+  --color-success-50: #f0fdf4;
+  --color-success-100: #dcfce7;
+  --color-success-200: #bbf7d0;
+  --color-success-300: #86efac;
+  --color-success-400: #4ade80;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-success-700: #15803d;
+  --color-success-800: #166534;
+  --color-success-900: #14532d;
+
+  /* ========== FUENTES PERSONALIZADAS ========== */
+  --font-gaming: "Orbitron", monospace;
+  --font-fantasy: "Cinzel", serif;
+  --font-cinzel: "Cinzel Decorative", serif;
+
+  /* ========== ANIMACIONES PERSONALIZADAS ========== */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-glow: glow 2s ease-in-out infinite alternate;
+  --animate-shimmer: shimmer 2s linear infinite;
+  --animate-bounce-slow: bounce 3s infinite;
+  --animate-spin-slow: spin 3s linear infinite;
+  --animate-pulse-fast: pulse 1s ease-in-out infinite;
+
+  /* ========== SOMBRAS PERSONALIZADAS ========== */
+  --shadow-gaming: 0 0 20px rgba(14, 165, 233, 0.3);
+  --shadow-gold: 0 0 20px rgba(245, 158, 11, 0.3);
+  --shadow-inner-gaming: inset 0 2px 4px 0 rgba(14, 165, 233, 0.1);
+
+  /* ========== ANCHOS DE BORDE PERSONALIZADOS ========== */
+  --width-3: 3px;
+}
+
+/* ========== KEYFRAMES PARA ANIMACIONES ========== */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
+
+@keyframes glow {
+  0% { 
+    box-shadow: 0 0 5px rgba(249, 115, 22, 0.5); 
+  }
+  100% { 
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.8); 
+  }
+}
+
+@keyframes shimmer {
+  0% { 
+    transform: translateX(-100%); 
+  }
+  100% { 
+    transform: translateX(100%); 
+  }
+}
+
+/* ========== VARIABLES CSS PERSONALIZADAS ========== */
 :root {
   --gaming-glow: 0 0 20px rgba(14, 165, 233, 0.3);
   --gold-glow: 0 0 20px rgba(245, 158, 11, 0.3);
@@ -8,6 +128,7 @@
   --success-glow: 0 0 20px rgba(34, 197, 94, 0.3);
 }
 
+/* ========== ESTILOS BASE ========== */
 * {
   box-sizing: border-box;
 }
@@ -16,17 +137,7 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  margin: 0;
-  /* font-family: 'Orbitron', monospace; */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #020617 0%, #0f172a 50%, #1e293b 100%);
-  background-attachment: fixed;
-  color: #e2e8f0;
-}
-
-/* Custom scrollbar */
+/* ========== SCROLLBAR PERSONALIZADO ========== */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -44,7 +155,7 @@ body {
   background: linear-gradient(45deg, #0284c7, #d97706);
 }
 
-/* Custom utility classes */
+/* ========== CLASES UTILITARIAS PERSONALIZADAS ========== */
 .text-shadow {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -156,9 +267,340 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Responsive typography */
+/* ========== ESTILOS GAMING EXTRAS ========== */
+
+/* Efecto de neón en textos */
+.neon-text {
+  text-shadow: 
+    0 0 10px rgba(14, 165, 233, 0.8),
+    0 0 20px rgba(14, 165, 233, 0.6),
+    0 0 30px rgba(14, 165, 233, 0.4),
+    0 0 40px rgba(14, 165, 233, 0.2);
+}
+
+.neon-gold {
+  text-shadow: 
+    0 0 10px rgba(245, 158, 11, 0.8),
+    0 0 20px rgba(245, 158, 11, 0.6),
+    0 0 30px rgba(245, 158, 11, 0.4);
+}
+
+/* Efecto de brillo en botones gaming */
+.btn-glow {
+  position: relative;
+  box-shadow: 
+    0 0 10px rgba(14, 165, 233, 0.5),
+    0 0 20px rgba(14, 165, 233, 0.3),
+    inset 0 0 10px rgba(14, 165, 233, 0.1);
+  transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+  box-shadow: 
+    0 0 20px rgba(14, 165, 233, 0.8),
+    0 0 40px rgba(14, 165, 233, 0.5),
+    0 0 60px rgba(14, 165, 233, 0.3),
+    inset 0 0 20px rgba(14, 165, 233, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Efecto de escaneo cyberpunk */
+@keyframes scan {
+  0% {
+    background-position: 0 -100vh;
+  }
+  35%, 100% {
+    background-position: 0 100vh;
+  }
+}
+
+.cyber-scan::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(14, 165, 233, 0.05) 50%,
+    transparent 100%
+  );
+  background-size: 100% 50px;
+  animation: scan 8s linear infinite;
+  pointer-events: none;
+}
+
+/* Grid holográfico de fondo */
+.holographic-grid {
+  background-image: 
+    linear-gradient(rgba(14, 165, 233, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 165, 233, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  position: relative;
+}
+
+.holographic-grid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(14, 165, 233, 0.1) 0%,
+    transparent 70%
+  );
+  animation: pulse 4s ease-in-out infinite;
+}
+
+/* Efecto de partículas flotantes */
+@keyframes float-particle {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(20px);
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(14, 165, 233, 0.6);
+  border-radius: 50%;
+  animation: float-particle 15s linear infinite;
+}
+
+/* Efecto de glitch en hover */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.glitch-hover:hover {
+  animation: glitch 0.3s linear;
+}
+
+/* Borde animado gaming */
+@keyframes border-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.border-flow {
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(14, 165, 233, 0.5),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: border-flow 3s linear infinite;
+}
+
+/* Efecto de luz pulsante */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(14, 165, 233, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.8), 0 0 30px rgba(14, 165, 233, 0.6);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Efecto de texto dividido (split text) */
+.split-text {
+  background: linear-gradient(
+    to right,
+    #0ea5e9 0%,
+    #38bdf8 25%,
+    #f59e0b 50%,
+    #fbbf24 75%,
+    #0ea5e9 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Efecto de líneas de energía */
+.energy-lines {
+  position: relative;
+  overflow: hidden;
+}
+
+.energy-lines::before,
+.energy-lines::after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(14, 165, 233, 0.8),
+    transparent
+  );
+}
+
+.energy-lines::before {
+  top: 0;
+  left: -100%;
+  animation: energy-flow 2s linear infinite;
+}
+
+.energy-lines::after {
+  bottom: 0;
+  right: -100%;
+  animation: energy-flow 2s linear infinite reverse;
+}
+
+@keyframes energy-flow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Efecto de cristal esmerilado gaming */
+.glass-gaming {
+  background: rgba(14, 165, 233, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  box-shadow: 
+    0 8px 32px 0 rgba(14, 165, 233, 0.15),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Efecto de hover 3D */
+.hover-3d {
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.hover-3d:hover {
+  transform: translateZ(20px) rotateX(5deg);
+}
+
+/* Fondo con degradado animado */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient {
+  background: linear-gradient(
+    45deg,
+    #020617,
+    #0c4a6e,
+    #0f172a,
+    #075985,
+    #020617
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* Efecto de destello en hover */
+.hover-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-shine::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  transition: transform 0.6s;
+}
+
+.hover-shine:hover::after {
+  transform: translateX(100%) translateY(100%) rotate(45deg);
+}
+
+/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
   body {
     font-size: 14px;
   }
+  
+  .neon-text {
+    text-shadow: 
+      0 0 5px rgba(14, 165, 233, 0.8),
+      0 0 10px rgba(14, 165, 233, 0.6);
+  }
 }
+
+/* ========== RESPONSIVE ==========
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+} */
